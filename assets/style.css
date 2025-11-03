@@ -1,1 +1,177 @@
+:root{
+  --bg:#fff; --fg:#111; --muted:#444; --card:#fafafa; --border:#e9e9e9;
+  --accent:#ff7a00; --max:1080px; --pad:24px;
+  --yellow:#ffd400; --black:#000;
+}
+:root{
+  --bg:#fff; --fg:#111; --muted:#444; --card:#fafafa; --border:#e9e9e9;
+  --accent:#ff7a00; --max:1080px; --pad:24px;
+  --yellow:#ffd400; --black:#000;
+}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.65;
+}
+.wrap{max-width:var(--max);margin:auto;padding:56px var(--pad)}
+h1{margin:0 0 8px;font-size:clamp(26px,4vw,40px);line-height:1.15}
+p.lead{margin:10px 0 28px;color:var(--muted);font-size:clamp(16px,2vw,19px)}
 
+/* fix header (jobb felső sarok) */
+.fixed-header{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:999;
+}
+.header-actions{display:flex;gap:10px;align-items:center}
+
+/* gombok */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 16px;border-radius:999px;border:1px solid transparent;
+  font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap
+}
+.btn-call{background:var(--accent);color:#fff}
+.btn-call:hover{filter:brightness(0.95)}
+.btn-toggle{background:#fff;border:1px solid var(--border);color:var(--fg)}
+.btn:focus-visible{outline:3px solid #666;outline-offset:2px}
+
+/* tartalom */
+.two{display:grid;grid-template-columns:360px 1fr;gap:32px;align-items:start}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px}
+.pfp{width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff}
+.pfp img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* accordion */
+.acc{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+.acc details{border-bottom:1px solid var(--border)}
+.acc details:last-child{border-bottom:none}
+.acc summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;display:flex;align-items:center;gap:10px}
+.acc summary::-webkit-details-marker{display:none}
+.chev{transition:transform .2s}
+details[open] .chev{transform:rotate(90deg)}
+.acc .body{padding:0 18px 16px 42px;color:#333}
+
+footer{margin-top:32px;color:#666;font-size:14px;text-align:center}
+
+/* kontraszt mód */
+body.hc{--bg:var(--black);--fg:var(--yellow);--muted:#ffe680;
+  --card:#0a0a0a;--border:#2c2c2c;--accent:#ffb300}
+body.hc .btn-toggle{background:transparent;border-color:#3a3a3a}
+body.hc .acc{background:#0e0e0e}
+
+@media(max-width:1000px){.two{grid-template-columns:1fr}}
+
+/* --- Rövid bemutatkozás: két oszlop, kicsi portré --- */
+.about .about-grid{
+  display:grid;
+  grid-template-columns: 220px 1fr;  /* bal: fix kis kép, jobb: szöveg */
+  gap:24px;
+  align-items:start;
+}
+
+/* felülírjuk a globális .pfp szabályt csak ebben a blokkban */
+.about .about-pfp{
+  width:100%;
+  max-width:220px;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.about .about-pfp img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+
+/* mobilon egymás alá essen, a kép középre és kisebb legyen */
+@media (max-width:700px){
+  .about .about-grid{ grid-template-columns:1fr; }
+  .about .about-pfp{ max-width:200px; margin:0 auto 12px; }
+}
+
+.about .about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.about .about-pfp {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.about .about-pfp img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-text h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--fg);
+}
+
+@media (max-width: 700px) {
+  .about .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about .about-pfp {
+    max-width: 200px;
+    margin: 0 auto 12px;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+}
+
+/* ==== Vélemény-karuszell ==== */
+.reviews{position:relative;display:flex;align-items:center;gap:10px}
+.rev-viewport{overflow:hidden;flex:1}
+.rev-track{display:flex;transition:transform .35s ease}
+.rev-card{
+  min-width:100%; /* mindig 1 kártya látszik */
+  border:1px solid var(--border);
+  border-radius:12px;background:#fff;
+  padding:16px 18px;
+}
+.rev-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rev-name{font-weight:700}
+.rev-stars{margin-left:auto;font-size:16px;letter-spacing:1px}
+.rev-text{margin:0;color:#222;line-height:1.6}
+
+.rev-arrow{
+  width:38px;height:38px;border-radius:999px;border:1px solid var(--border);
+  background:#fff;cursor:pointer;font-size:20px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.rev-arrow:hover{filter:brightness(.96)}
+.rev-arrow:focus-visible{outline:3px solid #666;outline-offset:2px}
+
+.rev-dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.rev-dot{
+  width:8px;height:8px;border-radius:8px;background:#ccc
+}
+.rev-dot.active{background:#888}
+
+body.hc .rev-card{background:#0e0e0e}
+body.hc .rev-arrow{background:transparent}
