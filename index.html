@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mozgásszervi panaszaid vannak? Segítek, hogy könnyebben élhess!</title>
+  <meta name="description" content="Kínában végzett, magyar anyanyelvű szakember – 20+ év tapasztalat hát-, nyak- és ízületi fájdalmak esetén.">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- Fix felső gombsor -->
+  <header class="fixed-header">
+    <div class="header-actions">
+      <a id="callBtnTop" class="btn btn-call btn-small" href="#" aria-label="Telefonhívás indítása">📞 Hívj</a>
+      <button id="toggleContrast" class="btn btn-toggle btn-small" type="button"
+        aria-pressed="false" aria-label="Magas kontraszt kapcsolása">🌓 Magas kontraszt</button>
+    </div>
+  </header>
+
+  <main class="wrap" role="main">
+    <h1>Mozgásszervi panaszaid vannak? Segítek, hogy könnyebben élhess!</h1> <br>
+
+    <!-- Rövid bemutatkozás: kisebb kép balra, szöveg jobbra -->
+    <section class="card about">
+  <div class="about-grid">
+    <div class="pfp about-pfp">
+      <img src="portrait.jpg" alt="Profilfotó – Ildikó">
+    </div>
+    <div class="about-text">
+      <h2>Rövid bemutatkozás</h2>
+      <p>
+        Kínában végzett, magyar anyanyelvű szakemberként több mint húsz év tapasztalattal
+        segítek hát-, nyak- és ízületi fájdalmak esetén. Vendégeim beszámolói szerint
+        sokan már az első alkalom után mérföldekkel jobban érzik magukat, és nyugodtabban alszanak.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Szolgáltatások (accordion) -->
+    <section class="card">
+      <h2>Szolgáltatások és problémakörök</h2>
+      <div class="acc" role="tablist">
+        <details>
+          <summary><span class="chev">▶</span> Csontkovácsolás</summary>
+          <div class="body">
+            <p>A test teljes szerkezetét segít visszaállítani. Hatékony lehet becsípődések, gerincferdülés, derék- és nyakfájás esetén. Sokan a kezelés után azonnali könnyebbségről számolnak.</p>
+            <p><strong>Segít különösen:</strong> derékfájdalom, hátfájdalom, becsípődött ideg, gerincproblémák.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="chev">▶</span> A teljes fizikai test helyreállítása (129 ízület helyretétele)</summary>
+          <div class="body">
+            <p>Az egész testet átmozgatva újra szabadabb mozgást biztosít. Különösen ajánlott ízületi merevség, mozgásbeszűkülés vagy krónikus fájdalom esetén.</p>
+            <p><strong>Segít különösen:</strong> ízületi merevség, beszűkült mozgás, tartós fájdalmak.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="chev">▶</span> Talpreflexológia</summary>
+          <div class="body">
+            <p>A talpon keresztül serkenti a szervezet öngyógyító folyamatait. Harmonizálja a belső szervek működését, javítja a keringést és a közérzetet.</p>
+            <p><strong>Segít különösen:</strong> emésztési problémák, fáradtság, stressz, hormonális egyensúlytalanság.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="chev">▶</span> Nyirokmasszázs</summary>
+          <div class="body">
+            <p>Gyengéd, mégis hatékony módszer a salakanyagok kiürítésére. Javítja az immunrendszer működését, segít ödéma és vizesedés esetén.</p>
+            <p><strong>Segít különösen:</strong> ödéma, nehézláb-érzés, legyengült immunrendszer, műtét utáni regeneráció.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="chev">▶</span> Kínai masszázs</summary>
+          <div class="body">
+            <p>Ősi technika, amely harmonizálja az energiáramlást a testben. Enyhíti a feszültséget, oldja a stresszt, és fokozza az életenergiát.</p>
+            <p><strong>Segít különösen:</strong> fejfájás, stressz, alvászavar, energiahiány.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="chev">▶</span> Köpölyözés</summary>
+          <div class="body">
+            <p>Vákuumterápia, amely fellazítja az izomcsomókat és javítja a vérkeringést. Segíti a méreganyagok távozását és a gyorsabb regenerációt.</p>
+            <p><strong>Segít különösen:</strong> hát- és vállfájdalom, izomgörcsök, vérkeringési problémák, letapadt izmok.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Miért engem -->
+    <section class="card">
+      <h2>Miért engem válassz?</h2>
+      <p>A kezeléseim célja, hogy a mozgásszervi rendszer, az ízületek és az izmok egyensúlyba kerüljenek, így a fájdalom csökken, a mozgás könnyebb, a közérzeted pedig tartósan javuljon. Sokan már az első alkalom után érzik, hogy felszabadultabbak, jobban alszanak, és visszakapják a mozgás örömét.</p>
+    </section>
+
+    <!-- Vendégvélemények -->
+    <section class="card" aria-labelledby="velemenyek">
+  <h2 id="velemenyek">Vendégvélemények</h2>
+
+  <div class="reviews">
+    <button class="rev-arrow prev" type="button" aria-label="Előző vélemény">‹</button>
+
+    <div class="rev-viewport" aria-live="polite">
+      <div id="reviewsTrack" class="rev-track">
+        <!-- JS tölti be a kártyákat -->
+      </div>
+    </div>
+
+    <button class="rev-arrow next" type="button" aria-label="Következő vélemény">›</button>
+  </div>
+
+  <div class="rev-dots" id="reviewsDots" aria-hidden="true"></div>
+
+  <p class="muted" style="margin-top:10px">Forrás: Google vélemények (kivonat)</p>
+</section>
+
+
+    <footer>© <span id="y"></span>.Minden jog fenntartva!</footer>
+  </main>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
+
+
