@@ -7,21 +7,43 @@
   <meta name="description" content="Kínában végzett, magyar anyanyelvű szakember – 20+ év tapasztalat hát-, nyak- és ízületi fájdalmak esetén.">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="assets/style.css">
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11086152577"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-11086152577');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11086152577"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11086152577');
+  </script>
+
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11086152577/xewZCPedxusbEIGHpaYp',
+        'value': 1.0,
+        'currency': 'HUF',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 <body>
-  <!-- Fix felső gombsor -->
   <header class="fixed-header">
     <div class="header-actions">
-      <a id="callBtnTop" class="btn btn-call btn-small" href="#" aria-label="Telefonhívás indítása"><center>📞 Ingyenes konzultáció</center></a>
+      <a id="callBtnTop" 
+         class="btn btn-call btn-small" 
+         href="tel:+36203574684" 
+         onclick="return gtag_report_conversion('tel:+36203574684');" 
+         aria-label="Telefonhívás indítása">
+         <center>📞 Ingyenes konzultáció</center>
+      </a>
+
       <button id="toggleContrast" class="btn btn-toggle btn-small" type="button"
         aria-pressed="false" aria-label="Magas kontraszt kapcsolása">🌓 Magas kontraszt</button>
     </div>
@@ -293,6 +315,7 @@ Vedd fel Ildikóval a kapcsolatot, és kérd a személyre szabott masszázs utal
   <script src="assets/script.js"></script>
 </body>
 </html>
+
 
 
 
